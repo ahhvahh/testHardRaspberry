@@ -5,7 +5,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <PlatformTarget>ARM32</PlatformTarget>
+    <PlatformTarget>ARM64</PlatformTarget>
   </PropertyGroup>
 
 </Project>
