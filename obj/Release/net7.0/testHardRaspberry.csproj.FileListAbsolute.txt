@@ -1,0 +1,5 @@
+C:\Users\ssfba\source\repos\ahhvahh\testHardRaspberry\obj\Release\net7.0\testHardRaspberry.csproj.AssemblyReference.cache
+C:\Users\ssfba\source\repos\ahhvahh\testHardRaspberry\obj\Release\net7.0\testHardRaspberry.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ssfba\source\repos\ahhvahh\testHardRaspberry\obj\Release\net7.0\testHardRaspberry.AssemblyInfoInputs.cache
+C:\Users\ssfba\source\repos\ahhvahh\testHardRaspberry\obj\Release\net7.0\testHardRaspberry.AssemblyInfo.cs
+C:\Users\ssfba\source\repos\ahhvahh\testHardRaspberry\obj\Release\net7.0\testHardRaspberry.csproj.CoreCompileInputs.cache

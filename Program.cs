@@ -1,38 +1,46 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 
 class Program
 {
     static void Main()
     {
-        var temp = GetCpuTemperature();
-
-        if (temp.HasValue)
+        // Getting temperature
+        string thermalZonePath = "/sys/class/thermal/thermal_zone0/temp";
+        if (File.Exists(thermalZonePath))
         {
-            Console.WriteLine($"CPU Temperature: {temp.Value}°C");
+            string tempData = File.ReadAllText(thermalZonePath);
+            double tempC = int.Parse(tempData) / 1000.0;
+            double tempF = (tempC * 9 / 5) + 32;
+
+            Console.WriteLine($"Temperature: {tempC:F2} °C / {tempF:F2} °F");
         }
         else
         {
-            Console.WriteLine("Failed to get CPU temperature.");
+            Console.WriteLine("Cannot find temperature data.");
         }
-    }
 
-    static float? GetCpuTemperature()
-    {
-        try
+        // Getting logged in sessions
+        var process = new Process()
         {
-            using var reader = new StreamReader("/sys/class/thermal/thermal_zone0/temp");
-            var line = reader.ReadLine();
-            if (line != null && float.TryParse(line, out var temp))
+            StartInfo = new ProcessStartInfo
             {
-                return temp / 1000;
+                FileName = "/bin/bash",
+                Arguments = "-c \"who\"",
+                RedirectStandardOutput = true,
+                UseShellExecute = false,
+                CreateNoWindow = true,
             }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error reading CPU temperature. {ex.Message}");
-        }
+        };
 
-        return null;
+        process.Start();
+
+        Console.WriteLine("Current active sessions:");
+        while (!process.StandardOutput.EndOfStream)
+        {
+            var line = process.StandardOutput.ReadLine();
+            Console.WriteLine(line);
+        }
     }
 }
