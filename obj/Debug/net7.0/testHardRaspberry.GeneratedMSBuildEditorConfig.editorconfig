@@ -8,4 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = testHardRaspberry
-build_property.ProjectDir = C:\Users\ssfba\source\repos\ahhvahh\testHardRaspberry\
+build_property.ProjectDir = C:\Users\ssfba\OneDrive\Documents\GitHub\testHardRaspberry\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
