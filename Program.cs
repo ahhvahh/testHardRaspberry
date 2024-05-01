@@ -6,6 +6,7 @@ class Program
 {
     static void Main()
     {
+        Console.WriteLine("Inicia esta merda");
         // Getting temperature
         string thermalZonePath = "/sys/class/thermal/thermal_zone0/temp";
         if (File.Exists(thermalZonePath))
@@ -43,6 +44,7 @@ class Program
             Console.WriteLine(line);
         }
 
+        Console.WriteLine("Aguardando 60 segundos");
         Thread.Sleep(60000);
         Console.WriteLine("Finalizando aplicação");
     }
