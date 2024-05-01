@@ -42,5 +42,8 @@ class Program
             var line = process.StandardOutput.ReadLine();
             Console.WriteLine(line);
         }
+
+        Thread.Sleep(60000);
+        Console.WriteLine("Finalizando aplicação");
     }
 }
