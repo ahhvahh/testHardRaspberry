@@ -45,7 +45,7 @@ class Program
         }
 
         Console.WriteLine("Aguardando 60 segundos");
-        Thread.Sleep(60000*10);
+        Thread.Sleep(60000*3);
         Console.WriteLine("Finalizando aplicação");
     }
 }
